@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Copyright (c) 2020-Present OpsResearch LLC
+# Licensed under the MIT License, see the LICENSE file.
 set -euo pipefail
 IFS=$'\n\t'
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
