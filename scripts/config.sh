@@ -25,8 +25,8 @@ is_x86_64(){
     [ "$(uname -m)" = 'x86_64' ]
 }
 
-is_arm_64(){
-    [ "$(uname -m)" = 'arm7' ]
+is_arch_64(){
+    [ "$(uname -m)" = 'aarch64' ]
 }
 
 is_macos(){
@@ -47,6 +47,18 @@ is_debian(){
 
 type_of_debian(){
     command -v apt-get
+}
+
+is_rhel(){
+    grep "Red Hat" /etc/os-release > /dev/null
+}
+
+is_centos(){
+    grep "Centos" /etc/os-release > /dev/null
+}
+
+type_of_rhel(){
+    command -v yum
 }
 
 
