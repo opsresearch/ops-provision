@@ -19,8 +19,12 @@ is_linux(){
     [ "$(uname)" = 'Linux' ]
 }
 
-is_linux_x86_64(){
-    is_linux && [ "$(uname -m)" = 'x86_64' ]
+is_x86_64(){
+    [ "$(uname -m)" = 'x86_64' ]
+}
+
+is_arm_64(){
+    [ "$(uname -m)" = 'arm7' ]
 }
 
 is_macos(){

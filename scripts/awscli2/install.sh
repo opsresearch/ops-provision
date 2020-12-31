@@ -20,7 +20,7 @@ if is_macos; then
     curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
     sudo installer -pkg AWSCLIV2.pkg -target / 
     rm -f ./AWSCLIV2.pkg
-elif is_linux_x86_64; then
+elif is_linux && is_x86_64; then
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
     unzip awscliv2.zip
     if ! command -v aws; then

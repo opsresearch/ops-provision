@@ -20,7 +20,7 @@ fi
 if is_macos; then
     brew update
     brew install -f terraform
-elif is_linux_x86_64; then
+elif is_linux && is_x86_64; then
     sudo wget "https://releases.hashicorp.com/terraform/$OPS_TERRAFORM_VERSION/terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
     sudo unzip "terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
     sudo mv -f terraform /usr/local/bin/
