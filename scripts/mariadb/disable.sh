@@ -14,6 +14,7 @@ if is_macos; then
     brew services stop mariadb
 elif is_linux; then
     sudo systemctl disable mariadb
+    sudo systemctl stop mariadb
 else
     echo "This OS isn't suitable for: $0"
     uname -a

@@ -16,10 +16,10 @@ if is_macos; then
     brew install -f mariadb
 elif type_of_debian; then
     sudo apt update
-    sudo apt install -y mariadb
+    sudo apt install -y mariadb mariadb-server
 elif type_of_rhel; then
     sudo yum update
-    sudo yum install -y mariadb
+    sudo yum install -y mariadb mariadb-server
 else
     echo "This OS isn't suitable for: $0"
     uname -a

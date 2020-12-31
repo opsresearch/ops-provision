@@ -14,6 +14,7 @@ if is_macos; then
     brew services start postgresql
 elif is_linux; then
     sudo systemctl enable postgresql
+    sudo systemctl start postgresql
 else
     echo "This OS isn't suitable for: $0"
     uname -a

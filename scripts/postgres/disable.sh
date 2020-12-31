@@ -14,6 +14,7 @@ if is_macos; then
     brew services stop postgresql
 elif is_linux; then
     sudo systemctl disable postgresql
+    sudo systemctl stop postgresql
 else
     echo "This OS isn't suitable for: $0"
     uname -a

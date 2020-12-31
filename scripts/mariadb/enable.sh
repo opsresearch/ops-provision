@@ -14,6 +14,7 @@ if is_macos; then
     brew services start mariadb
 elif is_linux; then
     sudo systemctl enable mariadb
+    sudo systemctl start mariadb
 else
     echo "This OS isn't suitable for: $0"
     uname -a
