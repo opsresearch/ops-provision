@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$HERE/.."
+source "config.sh"
+source "funct.sh"
+######
+
+cd "$HOME"
+
+if command -v aws > /dev/null; then
+    echo "Skipping the installation of awscli2 because the command 'aws' is defined."
+    exit 0
+fi
+
+# MACOS
+if is_macos; then
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target / 
+    rm -f ./AWSCLIV2.pkg
+elif is_linux_x86_64; then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    if ! command -v aws; then
+        sudo ./aws/install
+    else
+        sudo ./aws/install --update
+    fi
+    rm -rf ./awscliv2.zip ./aws
+else
+    echo "This OS isn't suitable for: $0"
+    uname -a
+    exit 1
+fi
+
+
