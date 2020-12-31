@@ -12,7 +12,11 @@ source "funct.sh"
 
 cd "$HOME"
 
-# MACOS
+if command -v packer > /dev/null; then
+    echo "Skipping Packer install because the command 'packer' is defined."
+    exit 0
+fi
+
 if is_macos; then
     brew update
     brew install -f packer
