@@ -12,6 +12,14 @@ source "funct.sh"
 
 cd "$HOME"
 
+install_rhel_shellcheck(){
+    if [ ! command -v shellcheck ]; then
+        wget -qO- "https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz" | tar -xJv
+        sudo mv "shellcheck-stable/shellcheck" /usr/bin/
+        rm -rf shellcheck-stable
+    fi
+}
+
 if is_macos; then
     brew update
     brew install -f shellcheck
@@ -19,8 +27,7 @@ elif type_of_debian; then
     sudo apt update
     sudo apt install -y shellcheck
 elif type_of_rhel; then
-    sudo yum update
-    sudo yum install -y shellcheck
+    install_rhel_shellcheck
 else
     echo "This OS isn't suitable for: $0"
     uname -a
