@@ -11,7 +11,7 @@ source "funct.sh"
 ######
 
 # SSH
-/ssh/init-user.sh 
+ssh/init-user.sh 'NO-PASSPHRASE' 
 
 # BASE
 base/install.sh
