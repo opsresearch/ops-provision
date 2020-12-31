@@ -10,6 +10,8 @@ source "funct.sh"
 
 cd "$HOME"
 
+echo "Terraform version: $OPS_TERRAFORM_VERSION"
+
 if command -v terraform > /dev/null; then
     echo "Skipping Terraform install because the command 'terraform' is defined."
     exit 0
@@ -19,10 +21,10 @@ if is_macos; then
     brew update
     brew install -f terraform
 elif is_linux_x86_64; then
-     sudo wget "https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
-    sudo unzip "terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+    sudo wget "https://releases.hashicorp.com/terraform/$OPS_TERRAFORM_VERSION/terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
+    sudo unzip "terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
     sudo mv -f terraform /usr/local/bin/
-    rm -f "./terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+    rm -f "./terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
 else
     echo "This OS isn't suitable for: $0"
     uname -a

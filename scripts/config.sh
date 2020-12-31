@@ -8,8 +8,8 @@ export REPO_ROOT
 REPO_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" && pwd )"
 
 set +u
-if [ -z "$TERRAFORM_VERSION" ]; then
-    export TERRAFORM_VERSION="0.14.3"
+if [ -z "$OPS_TERRAFORM_VERSION" ]; then
+    export OPS_TERRAFORM_VERSION="0.14.3"
 fi
 set -u
 
