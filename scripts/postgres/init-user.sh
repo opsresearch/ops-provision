@@ -10,6 +10,10 @@ source "config.sh"
 source "funct.sh"
 ######
 
-pg_sudo createuser "$USER"
-pg_sudo createdb "$USER"
-
+if is_macos; then
+    createuser "$USER"
+    createdb "$USER"
+elif is_linux;  then
+    sudo -u "$USER" createuser "$USER"
+    sudo -u "$USER" createdb "$USER"
+fi

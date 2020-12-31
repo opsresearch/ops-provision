@@ -17,6 +17,9 @@ if is_macos; then
 elif type_of_debian; then
     sudo apt update
     sudo apt install -y postgresql postgresql-contrib
+elif type_of_rhel; then
+    sudo yum update
+    sudo yum install -y postgresql postgresql-contrib
 else
     echo "This OS isn't suitable for: $0"
     uname -a

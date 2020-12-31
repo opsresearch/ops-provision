@@ -6,16 +6,6 @@ IFS=$'\n\t'
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 ######
 
-if is_macos; then
-    pg_sudo(){
-        "$@"
-    }
-elif is_linux;  then
-    pg_sudo(){
-        sudo -u "$@"
-    }
-fi
-
 run_as(){ # ARGS: <user-name> <script> [arg1 [arg2] ...]
     local_user=$1
     shift
