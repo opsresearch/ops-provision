@@ -13,7 +13,7 @@ source "funct.sh"
 cd "$HOME"
 
 install_rhel_shellcheck(){
-    if [ ! command -v shellcheck ]; then
+    if ! command -v shellcheck; then
         wget -qO- "https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz" | tar -xJv
         sudo mv "shellcheck-stable/shellcheck" /usr/bin/
         rm -rf shellcheck-stable
