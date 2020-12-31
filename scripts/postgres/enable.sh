@@ -12,7 +12,7 @@ source "funct.sh"
 
 if is_macos; then
     brew services start postgresql
-elif type_of_debian; then
+elif is_linux; then
     sudo systemctl enable postgresql
 else
     echo "This OS isn't suitable for: $0"

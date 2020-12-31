@@ -23,6 +23,9 @@ if is_macos; then
 elif type_of_debian; then
     sudo apt update
     sudo apt install -y sbcl
+elif type_of_rhel; then
+    sudo yum update
+    sudo yum install -y sbcl
 else
     echo "This OS isn't suitable for: $0"
     uname -a

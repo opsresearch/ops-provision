@@ -12,7 +12,7 @@ source "funct.sh"
 
 if is_macos; then
     brew services stop mariadb
-elif type_of_debian; then
+elif is_linux; then
     sudo systemctl disable mariadb
 else
     echo "This OS isn't suitable for: $0"
