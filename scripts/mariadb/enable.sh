@@ -13,8 +13,8 @@ source "funct.sh"
 if is_macos; then
     brew services start mariadb
 elif is_linux; then
-    sudo systemctl enable mariadb
-    sudo systemctl start mariadb
+    sudo systemctl enable mariadb.service
+    sudo systemctl start mariadb.service
 else
     echo "This OS isn't suitable for: $0"
     uname -a

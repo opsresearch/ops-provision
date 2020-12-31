@@ -13,8 +13,8 @@ source "funct.sh"
 if is_macos; then
     brew services stop mariadb
 elif is_linux; then
-    sudo systemctl disable mariadb
-    sudo systemctl stop mariadb
+    sudo systemctl disable mariadb.service
+    sudo systemctl stop mariadb.service
 else
     echo "This OS isn't suitable for: $0"
     uname -a
