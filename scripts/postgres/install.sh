@@ -16,10 +16,10 @@ if is_macos; then
     brew install -f postgresql
 elif type_of_debian; then
     sudo apt update
-    sudo apt install -y postgresql-client postgresql-server postgresql-contrib
+    sudo apt install -y postgresql postgresql-server postgresql-contrib
 elif type_of_rhel; then
     sudo yum update
-    sudo yum install -y postgresql-client postgresql-server postgresql-contrib
+    sudo yum install -y postgresql postgresql-server postgresql-contrib
 else
     echo "This OS isn't suitable for: $0"
     uname -a
