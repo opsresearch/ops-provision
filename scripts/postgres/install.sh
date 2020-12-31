@@ -26,5 +26,7 @@ else
     exit 1
 fi
 
-sudo postgresql-setup initdb
+if ! sudo postgresql-setup initdb; then
+    echo "The Postgresql data directory was previously initialized."
+fi
 
