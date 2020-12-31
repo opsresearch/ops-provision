@@ -30,11 +30,11 @@ mariadb/disable.sh
 # PACKER
 packer/install.sh
 
-# POSTGRESS
-postgress/install.sh
-postgress/enable.sh
-postgress/init-user.sh
-postgress/disable.sh
+# POSTGRES
+postgres/install.sh
+postgres/enable.sh
+postgres/init-user.sh
+postgres/disable.sh
 
 # PYTHON3
 python3/install.sh
