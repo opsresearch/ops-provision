@@ -33,7 +33,7 @@ packer/install.sh
 # POSTGRES
 postgres/install.sh
 postgres/enable.sh
-postgres/init-user.sh
+#postgres/init-user.sh
 postgres/disable.sh
 
 # PYTHON3
