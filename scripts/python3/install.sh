@@ -44,7 +44,6 @@ install_pip3(){
     fi
 }
 
-
 if ! command -v python3 > /dev/null; then
     install_python3
 fi
