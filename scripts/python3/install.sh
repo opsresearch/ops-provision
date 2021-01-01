@@ -12,7 +12,7 @@ source "funct.sh"
 
 cd "$REPO_ROOT"
 
-if command -v python3 > /dev/null; then
+if command -v python3 > /dev/null && command -v pip3 > /dev/null; then
     echo "Skipping, Python3 is already installed."
     exit 0
 fi
