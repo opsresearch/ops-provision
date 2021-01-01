@@ -24,6 +24,7 @@ if is_macos; then
     brew update
 elif type_of_debian; then
     sudo apt update -y
+    sudo apt upgrade -y
     sudo apt install -y unzip zip curl
 elif type_of_rhel; then
     sudo yum update -y

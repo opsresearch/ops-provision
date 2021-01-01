@@ -29,8 +29,8 @@ fi
 cd "$1"
 
 export PIP_REQUIRE_VIRTUALENV=false
-python3 -m pip3 install --upgrade pip
-python3 -m pip3 install virtualenv
+python3 -m pip install --upgrade pip
+python3 -m pip install virtualenv
 export PIP_REQUIRE_VIRTUALENV=true
 
 if [ ! -d "$2" ]; then
