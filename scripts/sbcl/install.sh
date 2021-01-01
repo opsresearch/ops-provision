@@ -20,6 +20,12 @@ if command -v sbcl > /dev/null; then
     exit 0
 fi
 
+if type_of_rhel7; then
+    echo "SBCL isn't supported on RHEL 7 based systems."
+    exit 0
+fi
+
+
 install_sbcl_linux_x86_64(){
     if ! command -v sbcl  > /dev/null; then
         cd /tmp
@@ -37,10 +43,8 @@ if is_macos; then
 elif type_of_debian; then
     sudo apt-get update -y
     sudo apt-get install -y sbcl
-elif type_of_rhel8 && is_x86_64; then
+elif type_of_rhel && is_x86_64; then
     install_sbcl_linux_x86_64
-elif type_of_rhel7 && is_x86_64; then
-    echo "SBCL isn't supported on RHEL 7 based systems."
 else
     echo "This OS isn't suitable for: $0"
     uname -a

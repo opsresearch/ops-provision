@@ -47,4 +47,4 @@ sbcl/init-user.sh
 # TERRAFORM
 terraform/install.sh
 
-
+echo "!!! SUCCESS !!!"

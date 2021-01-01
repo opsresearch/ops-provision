@@ -13,6 +13,11 @@ source "funct.sh"
 echo "Script: $0"
 cd "$HOME"
 
+if type_of_rhel7; then
+    echo "SBCL isn't supported on RHEL 7 based systems."
+    exit 0
+fi
+
 init_quicklisp(){
 sbcl --load quicklisp.lisp << EOF
 (quicklisp-quickstart:install)
