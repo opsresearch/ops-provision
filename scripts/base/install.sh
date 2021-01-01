@@ -23,10 +23,10 @@ if is_macos; then
     brew doctor
     brew update
 elif type_of_debian; then
-    sudo apt update
+    sudo apt update -y
     sudo apt install -y unzip zip
 elif type_of_rhel; then
-    sudo yum update
+    sudo yum update -y
     sudo yum install -y unzip zip
 else
     echo "This OS isn't suitable for: $0"
