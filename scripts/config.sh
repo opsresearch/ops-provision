@@ -64,4 +64,12 @@ type_of_rhel(){
     command -v yum
 }
 
+type_of_rhel8(){
+    command -v yum && grep 'VERSION="8"' /etc/os-release > /dev/null
+}
+
+type_of_rhel7(){
+    command -v yum && grep 'VERSION="7"' /etc/os-release > /dev/null
+}
+
 
