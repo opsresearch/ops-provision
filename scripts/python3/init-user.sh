@@ -12,6 +12,11 @@ source "funct.sh"
 
 echo "Script: $0"
 
+export PIP_REQUIRE_VIRTUALENV=false
+sudo python3 -m pip install --user --upgrade pip
+sudo python3 -m pip install --user virtualenv
+export PIP_REQUIRE_VIRTUALENV=true
+
 if is_macos; then
     if ! grep PIP_REQUIRE_VIRTUALENV "$HOME/.zshrc" > /dev/null; then
         echo 'export PIP_REQUIRE_VIRTUALENV=true' >> "$HOME/.zshrc"
