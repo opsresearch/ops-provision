@@ -17,7 +17,7 @@ if is_macos; then
     brew install -f mariadb
 elif type_of_debian; then
     sudo apt update
-    sudo apt install -y mariadb mariadb-server
+    sudo apt install -y mariadb-server
 elif type_of_rhel; then
     sudo yum update
     sudo yum install -y mariadb mariadb-server
