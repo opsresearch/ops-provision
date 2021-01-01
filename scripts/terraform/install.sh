@@ -21,7 +21,7 @@ if command -v terraform > /dev/null; then
 fi
 
 install_terraform_linux_x86_64(){
-    if ! command -v terraform; then
+    if ! command -v terraform > /dev/null; then
         sudo wget "https://releases.hashicorp.com/terraform/$OPS_TERRAFORM_VERSION/terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
         sudo unzip "terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
         sudo mv -f terraform /usr/local/bin/
