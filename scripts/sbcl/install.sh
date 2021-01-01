@@ -13,6 +13,8 @@ source "funct.sh"
 echo "Script: $0"
 cd "$HOME"
 
+echo "SBCL version: $OPS_SBCL_VERSION"
+
 if command -v sbcl > /dev/null; then
     echo "Skipping SBCL install because the command 'sbcl' is defined."
     exit 0
