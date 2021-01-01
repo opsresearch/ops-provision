@@ -17,15 +17,22 @@ if command -v sbcl > /dev/null; then
     exit 0
 fi
 
+install_sbcl_linux_x86_64(){
+    if ! command -v shellcheck; then
+        cd /tmp
+        wget -qO- "http://prdownloads.sourceforge.net/sbcl/sbcl-${OPS_SBCL_VERSION}-x86-64-linux-binary.tar.bz2" | tar -xjv
+        cd sbcl-${OPS_SBCL_VERSION}-x86-linux
+        sudo sh install.sh
+        cd ..
+        rm -rf sbcl-${OPS_SBCL_VERSION}-x86-linux
+    fi
+}
+
 if is_macos; then
     brew update
     brew install -f sbcl
-elif type_of_debian; then
-    sudo apt update
-    sudo apt install -y sbcl
-elif type_of_rhel; then
-    sudo yum update
-    sudo yum install -y sbcl
+elif is_linux && is_x86_64; then
+    install_sbcl_linux_x86_64
 else
     echo "This OS isn't suitable for: $0"
     uname -a

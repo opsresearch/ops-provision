@@ -19,14 +19,20 @@ if command -v terraform > /dev/null; then
     exit 0
 fi
 
+install_terraform_linux_x86_64(){
+    if ! command -v terraform; then
+        sudo wget "https://releases.hashicorp.com/terraform/$OPS_TERRAFORM_VERSION/terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
+        sudo unzip "terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
+        sudo mv -f terraform /usr/local/bin/
+        rm -f "./terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
+    fi
+}
+
 if is_macos; then
     brew update
     brew install -f terraform
 elif is_linux && is_x86_64; then
-    sudo wget "https://releases.hashicorp.com/terraform/$OPS_TERRAFORM_VERSION/terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
-    sudo unzip "terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
-    sudo mv -f terraform /usr/local/bin/
-    rm -f "./terraform_${OPS_TERRAFORM_VERSION}_linux_amd64.zip"
+    install_terraform_linux_x86_64
 else
     echo "This OS isn't suitable for: $0"
     uname -a

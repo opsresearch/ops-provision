@@ -13,6 +13,9 @@ set +u
 if [ -z "$OPS_TERRAFORM_VERSION" ]; then
     export OPS_TERRAFORM_VERSION="0.14.3"
 fi
+if [ -z "$OPS_SBCL_VERSION" ]; then
+    export OPS_SBCL_VERSION="2.1.0"
+fi
 set -u
 
 ############
