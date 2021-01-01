@@ -24,7 +24,7 @@ if is_macos; then
     brew install -f python3
 elif type_of_debian; then
     sudo apt update
-    sudo apt install -y python3 python3-pip
+    sudo apt install -y python3-pip
 elif type_of_rhel; then
     sudo yum update
     sudo yum install -y python3 python3-pip
