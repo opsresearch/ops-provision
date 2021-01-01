@@ -51,3 +51,9 @@ fi
 if ! command -v pip3 > /dev/null; then
     install_pip3
 fi
+
+export PIP_REQUIRE_VIRTUALENV=false
+sudo -H python3 -m pip install --upgrade pip
+sudo -H python3 -m pip install virtualenv
+export PIP_REQUIRE_VIRTUALENV=true
+
