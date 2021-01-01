@@ -24,10 +24,10 @@ install_sbcl_linux_x86_64(){
     if ! command -v sbcl  > /dev/null; then
         cd /tmp
         wget -qO- "http://prdownloads.sourceforge.net/sbcl/sbcl-${OPS_SBCL_VERSION}-x86-64-linux-binary.tar.bz2" | tar -xjv
-        cd sbcl-${OPS_SBCL_VERSION}-x86-linux
+        cd sbcl-${OPS_SBCL_VERSION}-x86-64-linux
         sudo sh install.sh
         cd ..
-        rm -rf sbcl-${OPS_SBCL_VERSION}-x86-linux
+        rm -rf sbcl-${OPS_SBCL_VERSION}-x86-64-linux
     fi
 }
 
