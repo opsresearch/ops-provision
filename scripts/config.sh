@@ -49,7 +49,7 @@ is_debian(){
 }
 
 type_of_debian(){
-    command -v apt-get
+    command -v apt-get > /dev/null
 }
 
 is_rhel(){
@@ -61,7 +61,7 @@ is_centos(){
 }
 
 type_of_rhel(){
-    command -v yum
+    command -v yum > /dev/null
 }
 
 type_of_rhel8(){
