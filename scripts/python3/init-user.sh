@@ -10,7 +10,8 @@ source "config.sh"
 source "funct.sh"
 ######
 
-# MACOS
+echo "Script: $0"
+
 if is_macos; then
     if ! grep PIP_REQUIRE_VIRTUALENV "$HOME/.zshrc" > /dev/null; then
         echo 'export PIP_REQUIRE_VIRTUALENV=true' >> "$HOME/.zshrc"

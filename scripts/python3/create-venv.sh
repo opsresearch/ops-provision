@@ -10,6 +10,8 @@ source "config.sh"
 source "funct.sh"
 ######
 
+echo "Script: $0"
+
 usage(){
     echo "Usage: create-venv.sh <directory> <name>"
     exit 1

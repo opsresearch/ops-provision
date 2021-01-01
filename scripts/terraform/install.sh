@@ -10,6 +10,7 @@ source "config.sh"
 source "funct.sh"
 ######
 
+echo "Script: $0"
 cd "$HOME"
 
 echo "Terraform version: $OPS_TERRAFORM_VERSION"

@@ -10,6 +10,8 @@ source "config.sh"
 source "funct.sh"
 ######
 
+echo "Script: $0"
+
 if is_macos; then
     brew services start mariadb
 elif is_linux; then

@@ -10,7 +10,8 @@ source "config.sh"
 source "funct.sh"
 ######
 
-# MACOS
+echo "Script: $0"
+
 if is_macos; then
     brew update
     brew install -f mariadb

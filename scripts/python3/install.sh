@@ -17,7 +17,8 @@ if command -v python3 > /dev/null; then
     exit 0
 fi
 
-# MACOS
+echo "Script: $0"
+
 if is_macos; then
     brew update
     brew install -f python3
