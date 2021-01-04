@@ -12,5 +12,6 @@ The resulting project is Ops-Provision, a collection of free-open-source bash sc
 If you need simple bash-driven provisioning in your project, I hope you will give it a try, and you find it useful.
 
 Copyright (c) 2020-Present OpsResearch LLC
+
 Licensed under the MIT License, see the LICENSE file.
 
