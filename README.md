@@ -1,5 +1,5 @@
 # Ops-Provision
-Dead-Easy Provisioning and Configuration
+*Dead-Easy Provisioning and Configuration*
 
 Do you ever need to install software on a variety of computers where the trouble of an enterprise-grade provisioner isn’t justified? Where all you really need is a bash script.
 
